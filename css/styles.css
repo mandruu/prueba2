@@ -1,0 +1,100 @@
+h1{
+  font-size: 50px;
+}
+
+.btn{
+  margin-top: 5%;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 30px;
+    margin-bottom: 5%
+}
+.contenido{
+  font-family: 'Amatic SC', cursive;
+  font-size: 50px;
+  text-align: center;
+  background-color: #d92027;
+  color: white;
+  width: 100%;
+  margin-left: 0;
+
+}
+
+
+.form{
+  width:500px;
+  height:400px;
+  background:#d92027;
+  border-radius:8px;
+  box-shadow:0 0 40px -10px #000;
+  text-align: center;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+}
+
+.hide{
+  visibility:hidden;
+}
+
+.hidden{
+  display: none;
+}
+
+.titulo{
+  background-color: white;
+  font-family: 'Permanent Marker', cursive;
+  padding-left: 35rem;
+  margin-top: 5%;
+  color : #d92027;
+    margin-left: 0;
+}
+
+#formulario{
+  padding-left: 40%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#respuestan{
+  padding-left: 40%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#respuestap{
+  padding-left: 40%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+@media (max-width: 1050px){
+  #formulario{
+    padding-left: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  #respuestan{
+    padding-left: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  #respuestap{
+    padding-left: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .titulo{
+    background-color: white;
+    font-family: 'Permanent Marker', cursive;
+    padding-left: 01rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color : #d92027;
+      margin-left: 0;
+  }
+
+}

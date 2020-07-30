@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Escribe tu Palindromo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/logo.png">
+</head>
+
+<body>
+  <section id="title">
+    <div class="row">
+      <div class="imagen">
+        <img src="images/logo.png" alt="Parque Explora">
+      </div>
+      <div class="titulo">
+        <h1>Palindromos</h1>
+
+      </div>
+
+
+    </div>
+  </section>
+  <section id="body">
+    <div class="contenido">
+      <p>¿Qué es un palíndromo? Muy sencillo: una palabra o frase que se lee igual de izquierda a derecha que de derecha a izquierda.</p>
+      <h2>Presiona Click en el Boton inferior para ingresar el tuyo.</h2>
+      <button onclick="ocultar()" type="button" class="btn btn-outline-light btn-lg download-buttons">Iniciar</button>
+    </div>
+    <div class="hidden" id="formulario">
+      <form class="form">
+        <h1>Ingresa tu Frase!!</h1>
+        <p>Tiempo disponible:</p><span id="countdown"></span>
+        <br>
+        <textarea name="name" rows="2" cols="45" id="frasep"></textarea>
+        <button onclick="ocultarr()" type="button" class="btn btn-outline-light btn-lg download-buttons">Terminar</button>
+      </form>
+    </div>
+
+    <div class="hidden" id="respuestap" onload="ConteoRegresivo()">
+      <form class="form">
+        <h1>y tu frase es...!!</h1>
+        <label class="respuesta">palindromo</label>
+        <br>
+        <label id="derecho"></label>
+        <br>
+        <label id="revez"></label>
+        <br>
+        <button onclick="document.location.reload();" type="button" class="btn btn-outline-light btn-lg download-buttons">Reiniciar</button>
+      </form>
+    </div>
+
+    <div class="hidden" id="respuestan" onload="ConteoRegresivo()">
+      <form class="form">
+        <h1>y tu frase es...!!</h1>
+        <label class="respuesta">No es palindromo</label>
+        <br>
+        <label id="derecho2" value=""></label>
+        <br>
+        <label id="revez2" value=""></label>
+        <br>
+        <button onclick="document.location.reload();" type="button" class="btn btn-outline-light btn-lg download-buttons">Reiniciar</button>
+      </form>
+    </div>
+
+  </section>
+</body>
+<script type="text/javascript">
+  window.onload = updateClock;
+
+var totalTime = 10;
+
+function updateClock() {
+  document.getElementById('countdown').innerHTML = totalTime;
+  if(totalTime==0){
+    ocultarr();
+  }else{
+    totalTime-=1;
+    setTimeout("updateClock()",1000);
+  }
+}
+
+  function ocultar() {
+    var element = document.getElementById("formulario");
+    element.classList.remove("hidden");
+  }
+
+  function ocultarr() {
+    var x1 = document.getElementById("frasep").value;
+    var sw = 0;
+    var y = "";
+    x = x1.replace(/ /g, "");
+    x = x.toLowerCase();
+
+    for (var i = 0; i < x.length; i++) {
+      y = y + x[x.length - i - 1];
+    }
+
+
+    for (var i = 0; i < x.length; i++) {
+      if (x[i] != x[x.length - i - 1]) {
+        sw = 1;
+        document.getElementById('derecho2').innerHTML = x;
+        document.getElementById('revez2').innerHTML = y;
+        var element = document.getElementById("formulario");
+        element.classList.add("hidden");
+        var element = document.getElementById("respuestan");
+        element.classList.remove("hidden");
+      }
+    }
+
+    if (sw != 1) {
+      document.getElementById('derecho').innerHTML = x;
+      document.getElementById('revez').innerHTML = y;
+      var element = document.getElementById("formulario");
+      element.classList.add("hidden");
+      var element = document.getElementById("respuestap");
+      element.classList.remove("hidden");
+    }
+
+  }
+
+
+</script>
+
+</html>
